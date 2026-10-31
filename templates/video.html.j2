@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ langtag }}" dir="{{ direction }}">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0b23">
+<meta name="robots" content="index,follow,max-video-preview:-1,max-image-preview:large"><meta name="description" content="{{ t.videoDesc }} {{ t.lead }}">
+<title>{{ t.videoLabel }} | Stopododo</title><link rel="canonical" href="{{ canonical }}">
+{% for code,tag in lang_map.items() %}<link rel="alternate" hreflang="{{ tag }}" href="{{ base }}/{{ code }}/video-stopododo.html">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ base }}/fr/video-stopododo.html">
+<link rel="icon" href="../favicon.svg"><link rel="stylesheet" href="../styles-v3.css"><link rel="stylesheet" href="../seo-v6.css">
+<meta property="og:type" content="video.other"><meta property="og:title" content="{{ t.videoLabel }} | Stopododo"><meta property="og:description" content="{{ t.videoDesc }} {{ t.lead }}"><meta property="og:url" content="{{ canonical }}"><meta property="og:image" content="{{ base }}/assets/img/video-posters/{{ lang }}.webp">
+<meta property="og:video" content="{{ base }}/assets/videos/{{ lang }}.mp4"><meta property="og:video:type" content="video/mp4">
+<script type="application/ld+json">{{ schema|safe }}</script>
+</head>
+<body class="seo-article-body"><a class="skip" href="#main">{{ t.skip }}</a><header class="header"><div class="container header-inner">
+<a class="logo" href="index.html"><img src="../assets/img/brand-icon.webp" alt="" width="44" height="44">Stopododo</a>
+<nav class="seo-header-links" aria-label="Navigation"><a href="index.html">{{ t.navfeatures }}</a><a href="index.html#captures">{{ t.navscreens }}</a><a href="index.html#premium">{{ t.navpremium }}</a></nav>
+<details class="language"><summary aria-label="{{ t.navLang }}">◎ {{ lang|upper }} ⌄</summary><div class="language-list">{% for code,tag in lang_map.items() %}<a href="../{{ code }}/video-stopododo.html" lang="{{ tag }}" {% if code==lang %}aria-current="page"{% endif %}>{{ lang_names[code] }}</a>{% endfor %}</div></details>
+</div></header>
+<main id="main" class="seo-main">
+<section class="container seo-video-layout"><p class="seo-breadcrumb"><a href="index.html">Stopododo</a> / {{ t.navvideo }}</p><p class="eyebrow">{{ t.navvideo|upper }} · ANDROID</p>
+<h1>{{ t.videoLabel }}</h1><p class="seo-lead">{{ t.videoDesc }} {{ t.lead }}</p>
+<div class="seo-watch"><video id="featured-video" controls playsinline preload="none" poster="../assets/img/video-posters/{{ lang }}.webp" width="720" height="1280" aria-label="{{ t.videoLabel }}"><source src="../assets/videos/{{ lang }}.mp4" type="video/mp4">{{ t.videoFallback }}</video></div>
+<p class="seo-video-info">{{ t.videoLabel }} · {{ seconds }} s · Android · Stopododo</p>
+<div class="seo-about"><h2>{{ t.featuresTitle }}</h2><p>{{ t.featuresLead }}</p><div class="seo-three"><article><h3>{{ t.feat1 }}</h3><p>{{ t.feat1desc }}</p></article><article><h3>{{ t.feat2 }}</h3><p>{{ t.feat2desc }}</p></article><article><h3>{{ t.feat3 }}</h3><p>{{ t.feat3desc }}</p></article></div>
+<p class="seo-caution">{{ t.faq2a }}</p><p><a class="button button-secondary" href="index.html#captures">{{ t.discover }} →</a></p></div></section>
+</main><footer class="footer"><div class="container footer-inner"><a class="logo footer-brand" href="index.html"><img src="../assets/img/brand-icon.webp" width="38" height="38" alt="">Stopododo</a><p>© 2026 {{ t.footer }}</p><nav aria-label="Legal"><a href="../confidentialite.html">{{ t.legalPrivacy }}</a><a href="../conditions.html">{{ t.legalTerms }}</a><a href="../accessibilite.html">{{ t.legalAccess }}</a><a href="../contact.html">{{ t.contact }}</a></nav></div></footer></body></html>

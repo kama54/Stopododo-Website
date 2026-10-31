@@ -1,0 +1,39 @@
+/* V6: semantic search guides and dedicated video watch pages; builds on the original V5 design. */
+.seo-main{background:linear-gradient(170deg,#100d29,#12102e 45%,#090d22);min-height:65vh}
+.seo-header-links{display:flex;gap:26px;margin-inline:auto;font-size:.95rem}.seo-header-links a{color:#dbd6f5}
+.seo-article-body .language{position:relative}
+.seo-video-layout{padding-top:64px;padding-bottom:115px;max-width:1030px;text-align:center}
+.seo-breadcrumb{font-size:.88rem;color:#beb4e4;margin:0 0 38px;text-align:start}
+.seo-breadcrumb a{color:#d4bcff}
+.seo-video-layout h1{font-size:clamp(2.25rem,5vw,4.5rem);line-height:1.12;max-width:890px;margin:17px auto 24px}
+.seo-lead{color:#cbd0e7;font-size:clamp(1.04rem,1.5vw,1.2rem);line-height:1.85;max-width:810px;margin:0 auto 34px}
+.seo-watch{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#3b2a6d50,#070716 75%);border:1px solid #ada0e350;border-radius:32px;padding:18px;min-height:500px}
+.seo-watch video{display:block;width:min(100%,430px);height:auto;aspect-ratio:9/16;background:#000;object-fit:contain;max-height:78vh;border-radius:18px;box-shadow:0 25px 75px #0009}
+.seo-watch video:fullscreen,.seo-watch video:-webkit-full-screen{width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;border-radius:0!important;background:#000!important}
+.seo-video-info{font-size:.9rem;margin:18px 0;color:#bcb1de}
+.seo-about{text-align:start;padding-top:55px}.seo-about h2{font-size:clamp(1.9rem,3.2vw,2.8rem)}.seo-three{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin:34px 0}
+.seo-three article{background:#201b40;border:1px solid #aa9ad646;border-radius:22px;padding:25px}.seo-three p{color:#cbd0e7}.seo-three h3{font-size:1.13rem}
+.seo-caution{color:#d9d2ee;border-inline-start:3px solid #ae8fea;padding-inline-start:20px;line-height:1.7}
+.seo-guide-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:70px;padding-top:72px;padding-bottom:110px;align-items:start}
+.seo-guide-content{max-width:830px}.seo-guide-content h1{font-size:clamp(2.45rem,4.3vw,4.2rem);line-height:1.11;margin:0 0 30px}
+.seo-guide-content .seo-lead{max-width:100%;margin:0 0 45px}
+.seo-guide-content h2{font-size:clamp(1.45rem,2.3vw,2.1rem);margin:0 0 16px;letter-spacing:-.02em}
+.seo-guide-content p{line-height:1.83;color:#d5d3e8}
+.seo-guide-section{margin-top:58px}
+.seo-guide-section p{font-size:1.025rem}
+.seo-guide-hero{border:1px solid #a38bd657;background:radial-gradient(circle at 10% 40%,#3d267c77,transparent 45%),#1b173c;padding:25px;display:flex;gap:30px;align-items:center;border-radius:28px;overflow:hidden}
+.seo-guide-hero img{width:clamp(95px,20%,155px);height:auto;flex:0 0 auto;border-radius:17px;box-shadow:0 12px 30px #0009}
+.seo-guide-hero span{font-size:.78rem;color:#dbc4ff;text-transform:uppercase;letter-spacing:.13em}.seo-guide-hero h2{font-size:1.8rem;margin:10px 0}
+.seo-guide-hero p{margin:0 0 10px;color:#e0dcf3}
+.seo-guide-sidebar{position:sticky;top:110px;border:1px solid #a492c34d;padding:25px;border-radius:22px;background:#1a1735}
+.seo-guide-sidebar h2{font-size:1.25rem;margin:0 0 15px}.seo-guide-sidebar>a{display:block;border-top:1px solid #9f90c22f;padding:12px 0;font-size:.92rem;line-height:1.5}.seo-guide-sidebar>a[aria-current=page]{font-weight:800;color:#fff}
+.seo-mini-cta{margin-top:24px;border-top:1px solid #9f90c22f;padding-top:20px}.seo-mini-cta img{border-radius:15px}.seo-mini-cta p{font-size:.89rem}
+.seo-faq{margin:12px 0;padding:14px 20px;background:#231d46;border:1px solid #8c78ba66;border-radius:16px}.seo-faq summary{cursor:pointer;font-weight:700}.seo-faq p{margin-bottom:0}
+.seo-sources{font-size:.88rem;margin:35px 0}.seo-end-cta{background:linear-gradient(135deg,#30255c,#16162f);padding:34px;border:1px solid #aa9ad647;border-radius:25px;margin-top:55px}
+.seo-end-cta p{margin-bottom:30px}
+.seo-guides-section{padding:105px 0;background:#11102b}.seo-guides-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:38px}
+.seo-guide-card{background:linear-gradient(155deg,#302658,#16142d);padding:30px;border:1px solid #a898dc64;border-radius:23px;display:flex;flex-direction:column;gap:18px;min-height:235px}
+.seo-guide-card h3{margin:0;font-size:1.32rem;line-height:1.26}.seo-guide-card p{color:#c4c0db;margin:0;line-height:1.55}.seo-guide-card a{margin-top:auto;font-weight:700;color:#dac5ff}
+.seo-watchlink{display:inline-flex;gap:9px;margin-top:13px;color:#ddcfff;font-weight:750;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.seo-header-links{display:none}.seo-guide-layout{grid-template-columns:1fr;gap:40px}.seo-guide-sidebar{position:static;max-width:none}.seo-three{grid-template-columns:1fr}.seo-guides-grid{grid-template-columns:1fr}.seo-watch{min-height:0}}
+@media(max-width:600px){.seo-video-layout{padding:36px 0 60px}.seo-video-layout h1{font-size:2.2rem}.seo-watch{padding:10px}.seo-watch video{max-height:74vh}.seo-guide-layout{padding-top:35px}.seo-guide-hero{gap:17px;padding:17px}.seo-guide-hero h2{font-size:1.4rem}.seo-guide-hero img{width:104px}.seo-guides-section{padding:65px 0}.seo-guide-content h1{font-size:2.35rem}}

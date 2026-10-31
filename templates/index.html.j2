@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="{{ langtag }}" dir="{{ direction }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b23">
+  <meta name="description" content="{{ t.desc }}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>{{ t.title }} | Stopododo</title>
+  <link rel="canonical" href="{{ canonical }}">
+{% for code,tag in langs %}  <link rel="alternate" hreflang="{{ tag }}" href="{{ base }}/{{ code }}/index.html">
+{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ base }}/fr/index.html">
+  <link rel="icon" href="{{ prefix }}favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="{{ prefix }}assets/img/hero-wide-v5.webp" media="(min-width:901px)" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="{{ prefix }}assets/img/hero-sleep.webp" media="(max-width:900px)" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="{{ prefix }}styles-v3.css">
+  <link rel="stylesheet" href="{{ prefix }}seo-v6.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ t.title }} | Stopododo">
+  <meta property="og:description" content="{{ t.desc }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ base }}/assets/img/social-preview.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{{ structured|safe }}</script>
+  <script src="{{ prefix }}site-v3.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">{{ t.skip }}</a>
+  <div class="sky" aria-hidden="true"></div>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="{{ home }}" aria-label="Stopododo"><img src="{{ prefix }}assets/img/brand-icon.webp" alt="" width="44" height="44"><span>Stopododo</span></a>
+      <nav class="desktop-nav" aria-label="Navigation"><a href="#fonctionnalites">{{ t.navfeatures }}</a><a href="#video">{{ t.navvideo }}</a><a href="#captures">{{ t.navscreens }}</a><a href="#premium">{{ t.navpremium }}</a><a href="#faq">{{ t.navfaq }}</a></nav>
+      <div class="header-right">
+        <details class="language"><summary aria-label="{{ t.navLang }}"><span aria-hidden="true">◎</span> <span class="language-current">{{ lang|upper }}</span> <span aria-hidden="true">⌄</span></summary><div class="language-list">
+{% for code,tag in langs %}          <a href="{{ prefix }}{{ code }}/index.html" lang="{{ tag }}" {% if code==lang %}aria-current="page"{% endif %}>{{ names[code] }}</a>
+{% endfor %}        </div></details>
+        <details class="mobile-nav"><summary aria-label="{{ t.menu }}"><span></span><span></span><span></span></summary><nav aria-label="{{ t.menu }}"><a href="#fonctionnalites">{{ t.navfeatures }}</a><a href="#video">{{ t.navvideo }}</a><a href="#captures">{{ t.navscreens }}</a><a href="#premium">{{ t.navpremium }}</a><a href="#faq">{{ t.navfaq }}</a></nav></details>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="container hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span>{{ t.eyebrow }}</p>
+          <h1 id="hero-title">{{ t.hero1 }}<br><em>{{ t.hero2 }}</em></h1>
+          <p class="hero-lead">{{ t.lead }}</p>
+          <div class="hero-actions"><button class="button button-primary" type="button" data-play-video aria-controls="promo-video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6V6Z" fill="currentColor"/></svg>{{ t.watch }}</button><a class="button button-secondary" href="#fonctionnalites">{{ t.discover }} <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-store-row"><div class="google-play-group" aria-label="{{ t.soon }}"><img class="google-play-badge" src="{{ prefix }}assets/img/google-play-badge.png" alt="Get it on Google Play" width="380" height="113" decoding="async"><span class="store-coming">{{ t.soon }}</span></div><div class="micro"><span class="micro-dot"></span>{{ t.micro }}</div></div>
+        </div>
+        <div class="hero-visual" aria-label="Stopododo sur smartphone Android">
+          <img class="hero-photo" src="{{ prefix }}assets/img/hero-sleep.webp" alt="" width="602" height="1079" fetchpriority="high" decoding="async">
+          <div class="hero-luminosity" aria-hidden="true"></div>
+          <div class="hero-phone device"><div class="device-camera" aria-hidden="true"></div><img src="{{ prefix }}assets/img/screen-ready.webp" alt="{{ t.screen1 }}" width="759" height="1536" decoding="async"></div>
+          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+          <span class="hero-star star-1" aria-hidden="true">✧</span><span class="hero-star star-2" aria-hidden="true">✦</span><span class="hero-star star-3" aria-hidden="true">✧</span>
+          <div class="hero-visual-caption"><span class="crescent" aria-hidden="true">☾</span><span>Stopododo<small>Gentler nights</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section" id="fonctionnalites" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading center"><p class="eyebrow">{{ t.featuresSmall }}</p><h2 id="features-title">{{ t.featuresTitle }}</h2><p>{{ t.featuresLead }}</p></div>
+        <div class="feature-grid">
+          <article class="feature-card feature-timer"><div class="feature-illustration timer-illustration" aria-hidden="true"><div class="timer-dial"><span class="dial-track"></span><span class="dial-num">15</span><small>min</small><span class="dial-dot"></span></div><span class="illustration-glow"></span></div><div class="feature-content"><span class="feature-index">01 / 03</span><h3>{{ t.feat1 }}</h3><p>{{ t.feat1desc }}</p></div></article>
+          <article class="feature-card feature-dim"><div class="feature-illustration dim-illustration" aria-hidden="true"><img src="{{ prefix }}assets/img/brand-poster.webp" alt="" width="602" height="1079" loading="lazy"><div class="dim-mask"></div><div class="dim-moon">☾</div></div><div class="feature-content"><span class="feature-index">02 / 03</span><h3>{{ t.feat2 }}</h3><p>{{ t.feat2desc }}</p></div></article>
+          <article class="feature-card feature-stop"><div class="feature-illustration stop-illustration" aria-hidden="true"><span class="stop-moon">☾</span><div class="stop-icons"><span><svg viewBox="0 0 24 24"><path d="m3 9 5 0 5-4v14l-5-4H3zM17 9l5 6m0-6-5 6"/></svg></span><span><svg viewBox="0 0 24 24"><path d="M8 5v14m8-14v14"/></svg></span><span><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span></div></div><div class="feature-content"><span class="feature-index">03 / 03</span><h3>{{ t.feat3 }}</h3><p>{{ t.feat3desc }}</p></div></article>
+        </div>
+      </div>
+    </section>
+
+{% if lang == 'fr' %}    <section class="seo-guides-section" id="guides"><div class="container"><div class="section-heading center"><p class="eyebrow">GUIDES ANDROID</p><h2>Vos questions, nos guides pratiques</h2><p>Réduire une luminosité gênante, programmer la fin du son ou gérer vos vidéos : des réponses concrètes sur smartphone Android.</p></div><div class="seo-guides-grid"><article class="seo-guide-card"><h3>Comment assombrir son écran Android ?</h3><p>Les réglages à essayer quand le minimum de luminosité reste trop fort.</p><a href="{{ prefix }}fr/assombrir-ecran-android.html">Lire le guide →</a></article><article class="seo-guide-card"><h3>Programmer un minuteur de sommeil</h3><p>Choisir la durée, le son et les actions de fin de minuterie.</p><a href="{{ prefix }}fr/minuteur-sommeil-android.html">Lire le guide →</a></article><article class="seo-guide-card"><h3>Arrêter une vidéo automatiquement</h3><p>Pause compatible, coupure du son et verrouillage : les différences.</p><a href="{{ prefix }}fr/arreter-video-automatiquement.html">Lire le guide →</a></article></div></div></section>
+{% endif %}
+    <section class="video-section" id="video" aria-labelledby="video-title"><div class="container video-layout">
+      <div class="video-copy"><p class="eyebrow">STOPODODO / FILM</p><h2 id="video-title">{{ t.videoTitle }}</h2><p>{{ t.videoDesc }}</p><button class="video-note" type="button" data-play-video aria-controls="promo-video"><span class="note-play" aria-hidden="true">▶</span><span>{{ t.videoLabel }}</span></button><p><a class="seo-watchlink" href="{{ prefix }}{{ lang }}/video-stopododo.html">{{ t.videoLabel }} ↗</a></p><p class="video-status" id="video-status" role="status" aria-live="polite" hidden></p></div>
+      <div class="video-frame"><div class="video-sheen" aria-hidden="true"></div><video id="promo-video" controls preload="none" playsinline poster="{{ prefix }}assets/img/video-posters/{{ lang }}.webp" aria-label="{{ t.videoLabel }}" data-play-error="{{ t.playError }}" tabindex="0" width="720" height="1280"><source src="{{ prefix }}assets/videos/{{ lang }}.mp4" type="video/mp4">{{ t.videoFallback }}</video></div>
+    </div></section>
+
+    <section class="screens-section" id="captures" aria-labelledby="screens-title"><div class="container">
+      <div class="section-heading center"><p class="eyebrow">{{ t.screensSmall }}</p><h2 id="screens-title">{{ t.screensTitle }}</h2><p>{{ t.screensDesc }}</p></div>
+      <div class="screen-grid">
+        <figure class="screen-item"><div class="screen-device device"><div class="device-camera"></div><img src="{{ prefix }}assets/img/screen-ready.webp" alt="{{ t.screen1 }}" loading="lazy" width="759" height="1536"></div><figcaption><span>01</span>{{ t.screen1 }}</figcaption></figure>
+        <figure class="screen-item screen-focus"><div class="screen-device device"><div class="device-camera"></div><img src="{{ prefix }}assets/img/screen-running.webp" alt="{{ t.screen2 }}" loading="lazy" width="759" height="1536"></div><figcaption><span>02</span>{{ t.screen2 }}</figcaption></figure>
+        <figure class="screen-item"><div class="screen-device device"><div class="device-camera"></div><img src="{{ prefix }}assets/img/screen-settings.webp" alt="{{ t.screen3 }}" loading="lazy" width="759" height="1536"></div><figcaption><span>03</span>{{ t.screen3 }}</figcaption></figure>
+      </div>
+    </div></section>
+
+    <section class="dimming-section" aria-labelledby="dimming-title"><div class="container dimming-layout">
+      <div class="dimming-demo"><div class="dimming-demo-scene"><img src="{{ prefix }}assets/img/hero-sleep.webp" alt="" loading="lazy" width="602" height="1079"><div class="demo-overlay" id="demo-overlay" aria-hidden="true"></div><span class="demo-float">☾</span></div><label for="dimming-level">{{ t.slider }} <output id="dimming-value" for="dimming-level">38%</output></label><input id="dimming-level" type="range" min="0" max="80" step="1" value="38" aria-describedby="demo-description"><p id="demo-description">{{ t.noteDemo }}</p></div>
+      <div class="dimming-copy"><p class="eyebrow">{{ t.simulation }}</p><h2 id="dimming-title">{{ t.feat2 }}</h2><p>{{ t.feat2desc }}</p><div class="soft-rule"></div><p class="quiet-copy">{{ t.noteDemo }}</p></div>
+    </div></section>
+
+    <section class="premium-section" id="premium" aria-labelledby="premium-title"><div class="container premium-grid">
+      <div class="premium-copy"><p class="eyebrow">{{ t.premiumSmall }}</p><h2 id="premium-title">{{ t.premiumTitle }}</h2><p>{{ t.premiumDesc }}</p><img class="premium-art" src="{{ prefix }}assets/img/brand-icon.webp" alt="" loading="lazy" width="256" height="256"></div>
+      <div class="pricing-grid"><article class="price-card free-card"><div class="price-top"><span>{{ t.free }}</span><strong>{{ t.freePrice }}</strong></div><ul><li>{{ t.free1 }}</li><li>{{ t.free2 }}</li><li>{{ t.free3 }}</li></ul></article><article class="price-card plus-card"><div class="price-top"><span>{{ t.prem }}</span><strong>{{ t.premPrice }}</strong><small>{{ t.oneTime }}</small></div><ul><li>{{ t.prem1 }}</li><li>{{ t.prem2 }}</li><li>{{ t.prem3 }}</li><li>{{ t.prem4 }}</li></ul></article></div>
+    </div></section>
+
+    <section class="trust-section"><div class="container trust-layout"><div class="trust-visual"><img src="{{ prefix }}assets/img/hero-sleep.webp" alt="" loading="lazy" width="602" height="1079"><div class="trust-orbit" aria-hidden="true">✦</div></div><div class="trust-copy"><p class="eyebrow">{{ t.trustSmall }}</p><h2>{{ t.trustTitle }}</h2><p>{{ t.trustDesc }}</p><div class="trust-pills"><span>✓ {{ t.trust1 }}</span><span>✓ {{ t.trust2 }}</span><span>✓ {{ t.trust3 }}</span></div></div></div></section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-title"><div class="container faq-layout"><div><p class="eyebrow">FAQ</p><h2 id="faq-title">{{ t.faqTitle }}</h2></div><div class="faq-items">{% for i in [1,2,3,4] %}<details><summary>{{ t['faq' ~ i] }}<span aria-hidden="true">+</span></summary><p>{{ t['faq' ~ i ~ 'a'] }}</p></details>{% endfor %}</div></div></section>
+
+    <section class="last-cta" id="telecharger"><div class="container final-card"><span class="final-halo" aria-hidden="true">☾</span><p class="eyebrow">STOPODODO</p><h2>{{ t.finalTitle }}</h2><p>{{ t.finalDesc }}</p><div class="coming-chip"><span class="coming-icon" aria-hidden="true">▶</span><span>{{ t.soon }}</span></div><small>{{ t.preview }}</small></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><a class="logo footer-brand" href="{{ home }}"><img src="{{ prefix }}assets/img/brand-icon.webp" width="38" height="38" alt="">Stopododo</a><p>© 2026 {{ t.footer }}</p><nav aria-label="Legal"><a href="{{ legal }}confidentialite.html">{{ t.legalPrivacy }}</a><a href="{{ legal }}conditions.html">{{ t.legalTerms }}</a><a href="{{ legal }}accessibilite.html">{{ t.legalAccess }}</a><a href="{{ legal }}contact.html">{{ t.contact }}</a></nav></div></footer>
+</body></html>
