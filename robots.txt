@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kama54.github.io/Stopododo-Website/sitemap.xml
