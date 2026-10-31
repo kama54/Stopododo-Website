@@ -36,3 +36,13 @@
 @media(max-width:900px){.hero{min-height:0}.hero-art{min-height:490px}.showcase-grid{grid-template-columns:1fr}.premium-inner{grid-template-columns:1fr}}
 @media(max-width:760px){.hero{padding-block:54px}.hero-art{min-height:410px}.hero-phone{width:min(58%,225px);top:8%;inset-inline-start:22%}.showcase-section{padding-block:68px}.showcase-grid figure{min-height:390px}.premium-highlight{padding-block:56px}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+
+/* Three authentic app screenshots in portrait phones plus a complete official poster. */
+.showcase-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.showcase-grid figure.screen-card{min-height:510px;padding:30px 16px}
+.showcase-grid figure.poster-card{grid-column:1/-1;min-height:270px;display:grid;grid-template-columns:minmax(280px,1.4fr) 1fr;gap:28px;justify-content:space-around}
+.showcase-grid figure.poster-card img{width:min(100%,630px)}
+.showcase-grid .poster-card figcaption{margin:0;text-align:start}
+.showcase-grid .screen-card figcaption{padding-inline:5px}
+@media(max-width:850px){.showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.showcase-grid figure.poster-card{grid-template-columns:1fr;min-height:0}.showcase-grid figure.poster-card figcaption{text-align:center}}
+@media(max-width:500px){.showcase-grid{grid-template-columns:1fr}.showcase-grid figure.screen-card{min-height:450px}}
