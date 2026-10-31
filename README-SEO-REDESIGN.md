@@ -9,7 +9,7 @@
 - La racine index.html devient une page française avec canonical /fr/index.html; les URL de sous-dossiers sont canoniques.
 
 ## À compléter avant la mise en ligne publique
-1. Ajouter les captures et bannières Play Store officielles (les assets binaires n'étaient pas dans le dépôt public). L'illustration SVG actuelle est volontairement présentée comme illustrative et non une capture d'écran.
+1. Le visuel Play Store original est désormais intégré sous une version WebP optimisée (380 × 186, ~3 Ko) à côté de l'illustration SVG nocturne. Ajouter ensuite les captures réelles de l'application et, pour la haute résolution, les visuels finalisés dans chaque langue.
 2. Confirmer le lien officiel exact de la fiche Play Store après lancement. Ne pas mettre un lien inventé; un badge « publication à venir » est affiché.
 3. Vérifier visuellement les 10 langues sur mobile (en particulier arabe RTL), les 50 pages et tous les liens.
 4. Vérifier la conformité juridique du contenu de confidentialité/conditions existant avant publication.
