@@ -1,0 +1,29 @@
+name: Import approved Stopododo V6 SEO
+on:
+  push:
+    branches:
+      - integration-v6-seo
+    paths:
+      - .github/workflows/import-v6.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-v6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout integration branch
+        uses: actions/checkout@v4
+        with:
+          ref: integration-v6-seo
+          persist-credentials: true
+      - name: Import ZIP and push only integration branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout -B integration-v6-seo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/import_v6.py Stopododo_Site_V6_SEO_10_Langues.zip --push
