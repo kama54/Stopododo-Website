@@ -86,3 +86,8 @@ img,svg{max-width:100%}img{display:block}p{margin:0}h1,h2,h3{letter-spacing:-.05
 .play-store-anchor:focus-visible{outline:3px solid #c4a8ff;outline-offset:4px}
 .google-play-group .store-coming{max-width:240px;text-align:center;line-height:1.35}
 @media(prefers-reduced-motion:reduce){.play-store-anchor{transition:none}}
+
+/* Launch: clickable bottom Google Play CTA */
+.coming-chip{text-decoration:none}
+.coming-chip:hover{color:#1b1232;filter:brightness(1.05)}
+.coming-chip:focus-visible{outline:3px solid #ffffff;outline-offset:4px}
