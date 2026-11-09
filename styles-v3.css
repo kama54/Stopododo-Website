@@ -79,3 +79,10 @@ img,svg{max-width:100%}img{display:block}p{margin:0}h1,h2,h3{letter-spacing:-.05
 
 /* Mirror the photo composition for Arabic, keeping the sleeper away from RTL headlines. */
 @media(min-width:901px){[dir=rtl] .hero-section::before{transform:scaleX(-1)}}
+
+/* Launch Google Play button */
+.play-store-anchor{display:block;border-radius:10px;transition:transform .18s ease}
+.play-store-anchor:hover{transform:translateY(-2px)}
+.play-store-anchor:focus-visible{outline:3px solid #c4a8ff;outline-offset:4px}
+.google-play-group .store-coming{max-width:240px;text-align:center;line-height:1.35}
+@media(prefers-reduced-motion:reduce){.play-store-anchor{transition:none}}
