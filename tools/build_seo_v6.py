@@ -1,7 +1,8 @@
 """Build the SEO additions to Stopododo V5 without publishing anything.
 
-The 10 original MP4s are reused without changes. VideoObject.uploadDate is omitted until a
-truthful first public release date is known. This is a prepublication candidate.
+The 10 original MP4s are reused without changes. VideoObject.uploadDate uses the
+first verified public commit that introduced the MP4 files (2026-10-31T17:47:58Z),
+unless STOPODODO_VIDEO_PUBLICATION_DATE provides a more accurate original date.
 """
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
@@ -152,12 +153,12 @@ def write_videos():
   sec=duration_s(lang)
   page=ROOT/lang/VIDEO_SUFFIX
   schema={'@context':'https://schema.org','@type':'VideoObject','name':t['videoLabel'],'description':t['videoDesc']+' '+t['lead'],'thumbnailUrl':f'{BASE}/assets/img/video-posters/{lang}.webp','contentUrl':f'{BASE}/assets/videos/{lang}.mp4','duration':f'PT{sec}S','inLanguage':locale,'url':f'{BASE}/{lang}/{VIDEO_SUFFIX}'}
-  # Google requires uploadDate for video rich results. Do not fabricate it in a draft.
-  release_date=os.getenv('STOPODODO_VIDEO_PUBLICATION_DATE','').strip()
-  if release_date:
-   d=datetime.fromisoformat(release_date)
-   if not d.tzinfo:raise ValueError('STOPODODO_VIDEO_PUBLICATION_DATE must have a timezone offset')
-   schema['uploadDate']=release_date
+  # Public GitHub commit 9e5f333 (31 Oct 2026) first introduced these MP4s.
+  # Preserve their first verified public availability date on regeneration.
+  release_date=os.getenv('STOPODODO_VIDEO_PUBLICATION_DATE','').strip() or '2026-10-31T17:47:58+00:00'
+  d=datetime.fromisoformat(release_date)
+  if not d.tzinfo:raise ValueError('STOPODODO_VIDEO_PUBLICATION_DATE must have a timezone offset')
+  schema['uploadDate']=release_date
   page.write_text(tmpl.render(t=t,lang=lang,langtag=locale,direction='rtl' if lang=='ar' else 'ltr',lang_map=LANGS,lang_names=NAMES,base=BASE,canonical=f'{BASE}/{lang}/{VIDEO_SUFFIX}',prefix='../',schema=json.dumps(schema,ensure_ascii=False).replace('</','<\\/'),seconds=sec),encoding='utf-8')
 
 
