@@ -7,7 +7,7 @@ import json
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT=Path(__file__).resolve().parents[1]
-BASE='https://kama54.github.io/Stopododo-Website'
+BASE='https://gogostudio.app/stopododo'
 NAMES={'fr':'Français','en':'English','es':'Español','it':'Italiano','de':'Deutsch','nl':'Nederlands','pt':'Português','ar':'العربية','ja':'日本語','ko':'한국어'}
 LOCALES={'fr':'fr-FR','en':'en','es':'es','it':'it','de':'de','nl':'nl','pt':'pt','ar':'ar','ja':'ja','ko':'ko'}
 T=json.loads((ROOT/'translations.json').read_text(encoding='utf-8'))

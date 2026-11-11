@@ -13,7 +13,7 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT=Path(__file__).resolve().parents[1]
-BASE='https://kama54.github.io/Stopododo-Website'
+BASE='https://gogostudio.app/stopododo'
 LANGS={'fr':'fr-FR','en':'en','es':'es','it':'it','de':'de','nl':'nl','pt':'pt-BR','ar':'ar','ja':'ja','ko':'ko'}
 NAMES={'fr':'Français','en':'English','es':'Español','it':'Italiano','de':'Deutsch','nl':'Nederlands','pt':'Português','ar':'العربية','ja':'日本語','ko':'한국어'}
 T=json.loads((ROOT/'translations.json').read_text(encoding='utf-8'))
